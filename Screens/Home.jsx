@@ -1,16 +1,14 @@
 import { View, ScrollView, Text } from "react-native";
 import { Button } from "react-native-paper";
-import { useNavigation } from "@react-navigation/native";
+import SafeAreaViewAndroid from "../components/SafeAreaViewAndroid";
 
-const Home = () => {
-  const navigation = useNavigation();
-
+const Main = ({ navigation }) => {
   const pressHandler = () => {
-    navigation.navigate("Screen1");
+    navigation.navigate("Register");
   };
 
   return (
-    <View style={{ marginTop: 50, backgroundColor: "gray" }}>
+    <View style={{ backgroundColor: "gray" }}>
       <ScrollView>
         <Text>Home</Text>
         <Button
@@ -22,6 +20,10 @@ const Home = () => {
       </ScrollView>
     </View>
   );
+};
+
+const Home = ({ navigation }) => {
+  return <SafeAreaViewAndroid Component={Main} navigation={navigation} />;
 };
 
 export default Home;
