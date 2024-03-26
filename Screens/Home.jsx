@@ -1,5 +1,5 @@
-import { View, ScrollView, Text } from "react-native";
-import { Button } from "react-native-paper";
+import { View, Text } from "react-native";
+import { Button, Appbar, Avatar, Headline } from "react-native-paper";
 import SafeAreaViewAndroid from "../components/SafeAreaViewAndroid";
 
 const Main = ({ navigation }) => {
@@ -8,16 +8,66 @@ const Main = ({ navigation }) => {
   };
 
   return (
-    <View style={{ backgroundColor: "gray" }}>
-      <ScrollView>
-        <Text>Home</Text>
-        <Button
-          style={{ backgroundColor: "red", margin: 40 }}
-          onPress={pressHandler}
-        >
-          <Text style={{ color: "white" }}>Screen1</Text>
-        </Button>
-      </ScrollView>
+    <View
+      style={{
+        backgroundColor: "white",
+        height: "100%",
+      }}
+    >
+      <Appbar
+        style={{
+          backgroundColor: "#90E0EF",
+        }}
+      >
+        <Appbar.Action icon={"heart"} onPress={() => console.log("heart")} />
+
+        <Appbar.Content title="Wow" />
+
+        <Appbar.Action
+          icon={"account-box-multiple"}
+          onPress={() => console.log("account-box-multiple")}
+        />
+        <Appbar.Action
+          icon={"bus-marker"}
+          onPress={() => console.log("bus-marker")}
+        />
+      </Appbar>
+
+      <Avatar.Image
+        source={{
+          uri: "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
+        }}
+        size={160}
+        style={{
+          alignSelf: "center",
+          margin: 40,
+        }}
+      />
+
+      <Button
+        style={{ backgroundColor: "blue", marginHorizontal: 60 }}
+        onPress={pressHandler}
+      >
+        <Text style={{ color: "white" }}>Register</Text>
+      </Button>
+      <Headline
+        style={{
+          textAlign: "center",
+          marginTop: 20,
+        }}
+      >
+        About Me
+      </Headline>
+      <Text
+        style={{
+          textAlign: "center",
+          width: "50%",
+          alignSelf: "center",
+          marginTop: 30,
+        }}
+      >
+        Hey, My name is Sanskar Vishwakarma. I am a Full Stack App Developer.
+      </Text>
     </View>
   );
 };

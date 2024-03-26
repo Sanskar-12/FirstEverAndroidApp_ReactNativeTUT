@@ -6,6 +6,8 @@ const SafeAreaViewAndroid = ({ Component, ...rest }) => {
     <View
       style={{
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        backgroundColor: "white",
+        flex: 1,
       }}
     >
       <SafeAreaView>
